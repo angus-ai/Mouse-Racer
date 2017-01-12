@@ -2,9 +2,9 @@
 Real time multi-player race game based on a Drag'n'drop gesture
 
 ##Installation
-1. Decompresser l'archive mouseracer.zip sur votre ordinateur
-2. Ouvrir l'invite commandes dans le dossier de decompression
-3. Entrer la commande npm install an d'installer les modules necessaires
+1. Decompresser l'archive mouseracer.zip sur votre ordinateur
+2. Ouvrir l'invite commandes dans le dossier de decompression
+3. Entrer la commande npm install an d'installer les modules necessaires
 4. Entrer la commande node app pour lancer le serveur
 
 Felicitations ! L'application devrait etre installee desormais.
