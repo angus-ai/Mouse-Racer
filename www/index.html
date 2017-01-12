@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mouse Racer</title>
+    <script src="canvas.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <style type="text/css">
+      canvas { display: inline-block; border: 1px solid black; cursor: crosshair;}
+    </style>
+  </head>
+
+  <body>
+    <canvas id="myCanvas" width="510" height="510"></canvas>
+  </body>
+
+  <script>
+    window.onload=function(){
+      var socket = io.connect('http://localhost:8080');
+      var pseudo = prompt('Quel est votre pseudo ?');
+
+      socket.emit('new_user', pseudo);
+
+      var myCanvas = document.getElementById('myCanvas');
+      var myContext = myCanvas.getContext('2d');
+
+      socket.on('message', function(message) {
+        alert(message);
+      });
+
+
+      socket.on('connexSuccess', function(pseudo,users){
+        var myToken = new Token(pseudo,5,5,'green');
+        var s = new CanvasState(myCanvas, socket , myToken);
+
+        for(i=0;i<users.length;i++){
+          var rivToken = new Token(users[i]);
+          s.addToken(rivToken);
+        };
+      });
+
+      socket.on('endGame', function(winner){
+        alert('Fin de la partie ! Le gagnant est '+winner);
+        location.reload();
+      })
+
+
+    }
+  </script>
+</html>

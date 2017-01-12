@@ -1,0 +1,9 @@
+{
+  "name": "mouseracer",
+  "version": "0.1.0",
+  "author"      : "JEBBARI Marwane",
+  "description" : "A Multiplayer mouse cursor race",
+  "dependencies": {
+    "socket.io" : "~1.4.5"
+  }
+}
