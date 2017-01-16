@@ -31,3 +31,8 @@ quand le curseur pointe sur une couleur rouge.
 d'autres circuits (importes sous forme d'image). J'ai pense en particulier aux cartes
 google maps qu'on pourrait exploiter directement et utiliser leur code couleur pour definir
 les obstacles.
+
+##Container (Docker)
+* Il est possible de lancer le server dans un container docker
+* `docker-compose build` pour compiler l'image
+* `docker-compose up` pour lancer un container
